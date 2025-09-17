@@ -1,0 +1,6 @@
+train:  c:/Users/robot/Desktop/BridgeLabelingJQ/dataset/train/images
+val: c:/Users/robot/Desktop/BridgeLabelingJQ/dataset/val/images
+
+nc: 5      
+
+names: ['efflorescence', 'Spalling', 'Spalling2', 'Delamination', 'cracking']
