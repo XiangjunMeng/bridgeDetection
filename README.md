@@ -16,12 +16,15 @@ Note: Spalling and Spalling2 are separate labels in the present dataset. Their p
 
 The experiment directories are archived training outputs, not a single end-to-end application entry point.
 Requirements
+
 - Python 3 and pip
 - Ultralytics YOLO
 - PyTorch (installed through a compatible Ultralytics environment)
 - Optional for preprocessing: OpenCV, NumPy, SciPy, and Matplotlib
 - Optional: MATLAB for working with the original .mat annotations and juanpath.m
+
 Install the Python dependencies:
+
 pip install ultralytics opencv-python numpy scipy matplotlib
 
 A CUDA-compatible GPU is recommended for training large images; CPU inference is also possible.
@@ -56,7 +59,9 @@ Both datasplit.py and split_dataset.py implement an 80/20 training/validation sp
 Important: Inspect the image/label filenames before splitting: some repository labels may not have matching images in the current checkout. Validate the resulting pairs before training.
 3. Train an object detector
 One saved YOLO11 experiment (detect/train20/args.yaml) used yolo11s.pt, 50 epochs, batch size 16, and image size 640. A corresponding training command is:
+
 yolo detect train model=yolo11s.pt data=dataset.yaml epochs=50 imgsz=640 batch=16
+
 This command illustrates how to reproduce that configuration, not a guarantee of identical results across dataset splits, hardware, or software versions.
 
 Earlier saved experiments also include a YOLOv8-based setup, so results from different experiment directories may not be directly comparable.
@@ -67,6 +72,7 @@ Potential Applications
 - Evaluation of object-detection architectures on domain-specific image data
 
 Acknowledgments
+
 This repository uses the Ultralytics YOLO ecosystem. Please follow the upstream project's license and attribution requirements. Ownership and reuse permissions for inspection images and annotation data should be verified independently.
 License
 No project-specific license is currently documented in this repository. Unless a license is added, public visibility alone does not grant broad permission to reuse or redistribute its contents.
